@@ -9,15 +9,16 @@ export default defineEventHandler(async event => {
   const request = event.node.req;
   const response = event.node.res;
   const url = new URL(request.url, `http://${request.headers.host}`);
+  let vpm_file = event.context.params.vpm_file;
+  if (vpm_file === 'favicon.ico') return await useStorage().getItem(vpm_file);
+
+  if (!vpm_file.startsWith('https://')) vpm_file = 'https://' + vpm_file;
 
   let ghproxy =
     url.searchParams.get('ghproxy') ??
     (request.headers['x-ghproxy'] as string | undefined) ??
     process.env.DEFAULT_GHPROXY;
   if (!ghproxy.startsWith('https://')) ghproxy = 'https://' + ghproxy;
-
-  let vpm_file = event.context.params.vpm_file;
-  if (!vpm_file.startsWith('https://')) vpm_file = 'https://' + vpm_file;
 
   let vpm = await storage
     .getItem<VPMPackageManifest>(vpm_file)
