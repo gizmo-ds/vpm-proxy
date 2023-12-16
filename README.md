@@ -22,9 +22,9 @@ VPM(VRChat Package Manager) 的加速项目, 缓解<span title="🤡">特殊网�
 
 原链接: `https://vpm.nadena.dev/vpm.json`
 
-新链接: `https://vpm.deno.dev/https://vpm.nadena.dev/vpm.json`
+新链接: `https://vpm-proxy.aika.dev/https://vpm.nadena.dev/vpm.json`
 
-为了可读性去掉`https://`也是可以的: `https://vpm.deno.dev/vpm.nadena.dev/vpm.json`
+为了可读性去掉`https://`也是可以的: `https://vpm-proxy.aika.dev/vpm.nadena.dev/vpm.json`
 
 在使用 VCC 添加软件包时使用新连接即可.
 
@@ -39,8 +39,8 @@ VPM(VRChat Package Manager) 的加速项目, 缓解<span title="🤡">特殊网�
 | Name        | Deploy                                                                                                                     |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Vercel      | [![Deploy with Vercel](https://vercel.com/button)](https://gg.gg/1821ge)                                                   |
-| Deno Deploy | [Deploy to Deno Deploy](https://nitro.unjs.io/deploy/providers/deno-deploy) / [Example](.github/workflows/deno-deploy.yml) |
 | Cloudflare  | [Deploy to Cloudflare](https://nitro.unjs.io/deploy/providers/cloudflare)                                                  |
+| Deno Deploy | [Deploy to Deno Deploy](https://nitro.unjs.io/deploy/providers/deno-deploy) / [Example](.github/workflows/deno-deploy.yml) |
 | Netlify     | [Deploy to Netlify](https://nitro.unjs.io/deploy/providers/netlify)                                                        |
 
 Check out the [deployment documentation](https://nitro.unjs.io/deploy) for more information.

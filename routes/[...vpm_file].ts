@@ -25,8 +25,11 @@ export default defineEventHandler(async event => {
   response.setHeader('vpm-cache-status', vpm ? 'HIT' : 'MISS');
   response.setHeader('vpm-cache-ttl', cache_ttl);
   if (!vpm) {
-    vpm = await fetch(vpm_file).then(resp => resp.json());
-    await storage.setItem(vpm_file, vpm, { ttl: cache_ttl });
+    const resp = await fetch(vpm_file);
+    const buff = await resp.arrayBuffer();
+    vpm = JSON.parse(new TextDecoder('utf-8').decode(buff));
+    if (buff.byteLength <= 65536)
+      storage.setItem(vpm_file, vpm, { ttl: cache_ttl });
   }
 
   for (const pkg_name in vpm.packages) {
