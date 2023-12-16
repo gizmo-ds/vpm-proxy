@@ -21,6 +21,7 @@ jobs:
       - run: pnpm install
       - run: pnpm build
         env:
+          NITRO_PRESET: deno_deploy
           CACHE_DENO_KV_ENABLE: 'true'
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
