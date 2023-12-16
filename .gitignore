@@ -1,0 +1,12 @@
+node_modules
+*.log*
+.nitro
+.cache
+.output
+.env
+dist
+
+wrangler.toml
+.wrangler
+
+.vercel

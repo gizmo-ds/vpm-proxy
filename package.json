@@ -1,0 +1,17 @@
+{
+  "name": "vpm-proxy",
+  "homepage": "https://github.com/gizmo-ds/vpm-proxy",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "pnpm@8.12.1",
+  "scripts": {
+    "prepare": "nitropack prepare",
+    "dev": "nitropack dev",
+    "build": "nitropack build",
+    "preview": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20231121.0",
+    "nitropack": "latest"
+  }
+}
